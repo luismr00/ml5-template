@@ -3,7 +3,8 @@ let latestPrediction = null;
 let modelIsLoading = true;
 let crownImage;
 
-const FOREHEAD_POINT = 151;
+// const FOREHEAD_POINT = 151;
+const FOREHEAD_POINT = 11;
 const LEFT_FORHEAD = 104;
 const RIGHT_FORHEAD = 333;
 
@@ -77,7 +78,7 @@ function draw() {
   // get forhead locations
   let foreheadLocation = latestPrediction.scaledMesh[FOREHEAD_POINT];
   let leftForeheadLocation = latestPrediction.scaledMesh[LEFT_FORHEAD];
-  let rightForeheadLocation = latestPrediction.scaledMesh[RIGHT_FOREHEAD];
+  let rightForeheadLocation = latestPrediction.scaledMesh[RIGHT_FORHEAD];
   let foreheadWidth = dist(
     leftForeheadLocation[0 /* x */],
     leftForeheadLocation[1 /* y */],
