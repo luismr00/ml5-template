@@ -2,6 +2,7 @@ let video;
 let latestPrediction = null;
 let modelIsLoading = true;
 let crownImage;
+let mySound;
 
 // const FOREHEAD_POINT = 151;
 const FOREHEAD_POINT = 11;
@@ -11,6 +12,11 @@ const RIGHT_FORHEAD = 333;
 // p5 function
 function preload() {
   crownImage = loadImage("assets/falcon-helmet1.png");
+
+  soundFormats('mp3', 'ogg');
+  mySound = loadSound("assets/falcon-taunt.mp3");
+
+
 }
 
 // p5 function
@@ -18,6 +24,7 @@ function setup() {
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.size(width, height);
+  
   // ml5 function
   let facemesh = ml5.facemesh(video, () => {
     console.log("Model is ready!");
@@ -31,7 +38,9 @@ function setup() {
     // console.log(results[0]);
     latestPrediction = results[0];
   });
+
   video.hide();
+
 }
 
 // // p5 function
@@ -68,11 +77,13 @@ function setup() {
 
 // p5 function
 function draw() {
+
   // if (modelIsLoading)
   // show a loading screen
   // draw webcam video
   imageMode(CORNER);
   image(video, 0, 0, width, height);
+
   //-----------------------------------
   if (latestPrediction == null) return; // don't draw anything else
   // get forhead locations
@@ -85,8 +96,8 @@ function draw() {
     rightForeheadLocation[0 /* x */],
     rightForeheadLocation[1 /* y */]
   );
-  console.log(foreheadWidth);
-  let crownWidth = foreheadWidth * 3;
+  // console.log(foreheadWidth);
+  let crownWidth = foreheadWidth * 2.5;
   let crownHeight = (crownImage.height / crownImage.width) * crownWidth;
   imageMode(CENTER);
   image(
@@ -96,4 +107,5 @@ function draw() {
     crownWidth /* width */,
     crownHeight /* height */
   );
+
 }
