@@ -20,7 +20,7 @@ Here are the requirements:
 
 ## Description
 
-The lens I created was a helmet from a video game character called Captain Falcon.
+The lens I created was a helmet from a video game character called Captain Falcon. Upon doing a salute gesture with the left arm one can trigger Falcon's famous taunt phrase called "Show me ya moves".
 
 ## Screenshot
 
