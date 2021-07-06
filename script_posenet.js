@@ -11,10 +11,21 @@ PoseNet example using p5.js
 let video;
 let poseNet;
 let poses = [];
+let crownImage;
+let playSound = false;
 
 // Storing the keypoint positions
 let keypoints = [];
 let interpolatedKeypoints = [];
+
+// p5 function
+function preload() {
+  crownImage = loadImage("assets/falcon-helmet1.png");
+
+  soundFormats('mp3', 'ogg');
+  mySound = loadSound("assets/falcon-taunt.mp3");
+}
+
 
 function setup() {
   createCanvas(640, 480);
@@ -60,19 +71,47 @@ function updateKeypoints() {
 
 function draw() {
   let flippedVideo = ml5.flipImage(video);
+  imageMode(CORNER);
   image(flippedVideo, 0, 0, width, height);
 
   updateKeypoints();
 
-  drawKeypoints();
+  // drawKeypoints();
 
   // console.log(interpolatedKeypoints[9]);
+  let nosePosition = interpolatedKeypoints[0];
   let leftWristPosition = interpolatedKeypoints[9];
+  let leftEarPosition = interpolatedKeypoints[3];
+  let rightEarPosition = interpolatedKeypoints[4];
 
-  if (leftWristPosition.y < height)
-    tint(0, 153, 204);
+  let earDistance = dist(
+    leftEarPosition.x,
+    leftEarPosition.y,
+    rightEarPosition.x,
+    rightEarPosition.y
+  );
+
+  let maskHeight = earDistance * 1.5;
+
+  imageMode(CENTER);
+  image(
+    crownImage,
+    nosePosition.x,
+    nosePosition.y - 100,
+    earDistance * 1.5,
+    maskHeight
+  );
+
+  if (leftWristPosition.y < height) {
+    // tint(0, 153, 204);
+    if (playSound === false) {
+      mySound.play();
+      playSound = true;
+    }
+  }
   else 
-    tint(255);
+    // tint(255);
+    playSound = false;
 }
 
 // A function to draw ellipses over the detected keypoints

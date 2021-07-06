@@ -1,4 +1,4 @@
-# Assignment 2: Make a reverse-engineered Snap Lens
+<!-- # Assignment 2: Make a reverse-engineered Snap Lens
 
 Here are the requirements: 
 
@@ -14,4 +14,13 @@ Here are the requirements:
 
 ## Here are templates and resources you can find elsewhere.
 1. ![Here are all of ml5 templates for p5!](https://editor.p5js.org/ml5/sketches)
-2. ![Here are some more templates from a Interactive and Computation class](http://cmuems.com/2018/60212f/deliverables/5-due-10-12/templates/)
+2. ![Here are some more templates from a Interactive and Computation class](http://cmuems.com/2018/60212f/deliverables/5-due-10-12/templates/) -->
+
+# SEA Camera Lens
+
+The lens I created was a helmet from a video game character called Captain Falcon. In order to run the lense, one needs to:
+
+1. Open this repo with the terminal either through an IDE of choice or the system's terminal 
+2. Run the command: http-server
+3. Go to the browser and navigate to: localhost:8080
+4. With the left hand, have your left hand show in front of the camera and you will hear a sound. Salute to make the lens effect look more dramatic. :)
