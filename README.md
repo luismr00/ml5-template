@@ -18,9 +18,26 @@ Here are the requirements:
 
 # SEA Camera Lens
 
-The lens I created was a helmet from a video game character called Captain Falcon. In order to run the lense, one needs to:
+## Description
+
+The lens I created was a helmet from a video game character called Captain Falcon.
+
+## Screenshot
+
+![alt text](./assets/RM_Screenshot.png)
+
+## Instructions to run the lens on local server
 
 1. Open this repo with the terminal either through an IDE of choice or the system's terminal 
 2. Run the command: http-server
 3. Go to the browser and navigate to: localhost:8080
 4. With the left hand, have your left hand show in front of the camera and you will hear a sound. Salute to make the lens effect look more dramatic. :)
+
+## Link to GitHub
+
+https://github.com/luismr00/ml5-template
+
+## Tools used
+
+- ml5.js
+- p5.js
