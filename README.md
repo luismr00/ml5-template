@@ -29,13 +29,19 @@ The lens I created was a helmet from a video game character called Captain Falco
 ## Instructions to run the lens on local server
 
 1. Open this repo with the terminal either through an IDE of choice or the system's terminal 
-2. Run the command: http-server
+2. Run the repo through a server. If you do not have a server command already installed globally, run the command: 
+
+```
+npm install --global http-server
+```
+
+Else, run the following the command if you already have a server installed or after running the command above sucessfully:
+
+```
+http-server
+```
 3. Go to the browser and navigate to: localhost:8080
 4. With the left hand, have your left hand show in front of the camera and you will hear a sound. Salute to make the lens effect look more dramatic. :)
-
-## Link to GitHub
-
-https://github.com/luismr00/ml5-template
 
 ## Tools used
 
